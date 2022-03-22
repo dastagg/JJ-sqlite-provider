@@ -1,12 +1,11 @@
-# provider_routes
+# sqlite_provider
 
 A Flutter tutorial by Johan Jurrius
 
 ## Description:
 
-This tutorial will combine the Routes tutorial and the Provider tutorial.
+This tutorial will introduce SQLite and use it to store persistant data.
 
-In the Routes tutorial, the routes module was also used to pass data back and forth.
+It will also use Provider for the State Management.
 
-By combining Routes and Provider, the routes module will only handle routes and the Provider package will handle data distribution.
-
+It also introduces flutter_slidable to as a UI Widget to delete items.
