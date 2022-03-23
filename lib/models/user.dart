@@ -1,6 +1,6 @@
 class UserFields {
-  static final String username = 'username';
-  static final String name = 'name';
+  static const String username = 'username';
+  static const String name = 'name';
   static final List<String> allFields = [username, name];
 }
 

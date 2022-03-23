@@ -12,21 +12,21 @@ class RouteManager {
     switch (settings.name) {
       case loginPage:
         return MaterialPageRoute(
-          builder: (context) => Login(),
+          builder: (context) => const Login(),
         );
 
       case registerPage:
         return MaterialPageRoute(
-          builder: (context) => Register(),
+          builder: (context) => const Register(),
         );
 
       case todoPage:
         return MaterialPageRoute(
-          builder: (context) => TodoPage(),
+          builder: (context) => const TodoPage(),
         );
 
       default:
-        throw FormatException('Route not found! Check routes again!');
+        throw const FormatException('Route not found! Check routes again!');
     }
   }
 }

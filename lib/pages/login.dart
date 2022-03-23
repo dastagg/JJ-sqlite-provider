@@ -28,7 +28,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -40,8 +40,8 @@ class _LoginState extends State<Login> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 40.0),
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 40.0),
                   child: Text(
                     'Welcome',
                     style: TextStyle(
@@ -63,7 +63,7 @@ class _LoginState extends State<Login> {
                     style: ElevatedButton.styleFrom(
                       primary: Colors.purple,
                     ),
-                    child: Text('Continue'),
+                    child: const Text('Continue'),
                   ),
                 ),
                 TextButton(
@@ -73,7 +73,7 @@ class _LoginState extends State<Login> {
                   onPressed: () {
                     Navigator.of(context).pushNamed(RouteManager.registerPage);
                   },
-                  child: Text('Register a new User'),
+                  child: const Text('Register a new User'),
                 ),
               ],
             ),

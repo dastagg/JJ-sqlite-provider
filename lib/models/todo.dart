@@ -1,8 +1,8 @@
 class TodoFields {
-  static final String username = 'username';
-  static final String title = 'title';
-  static final String done = 'done';
-  static final String created = 'created';
+  static const String username = 'username';
+  static const String title = 'title';
+  static const String done = 'done';
+  static const String created = 'created';
   static final List<String> allFields = [username, title, done, created];
 }
 

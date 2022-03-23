@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+
 import '../models/todo.dart';
 
 class TodoPage extends StatefulWidget {
@@ -28,7 +29,7 @@ class _TodoPageState extends State<TodoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -44,7 +45,7 @@ class _TodoPageState extends State<TodoPage> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     IconButton(
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.add,
                         color: Colors.white,
                         size: 30,
@@ -58,21 +59,21 @@ class _TodoPageState extends State<TodoPage> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              title: Text('Create a new TODO'),
+                              title: const Text('Create a new TODO'),
                               content: TextField(
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                     hintText: 'Please enter TODO'),
                                 controller: todoController,
                               ),
                               actions: [
                                 TextButton(
-                                  child: Text('Cancel'),
+                                  child: const Text('Cancel'),
                                   onPressed: () {
                                     Navigator.pop(context);
                                   },
                                 ),
                                 TextButton(
-                                  child: Text('Save'),
+                                  child: const Text('Save'),
                                   onPressed: () async {},
                                 ),
                               ],
@@ -82,7 +83,7 @@ class _TodoPageState extends State<TodoPage> {
                       },
                     ),
                     IconButton(
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.exit_to_app,
                         color: Colors.white,
                         size: 30,
@@ -94,8 +95,8 @@ class _TodoPageState extends State<TodoPage> {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   'John\'s Todo list',
                   textAlign: TextAlign.center,
@@ -144,15 +145,18 @@ class TodoCard extends StatelessWidget {
     return Card(
       color: Colors.purple.shade300,
       child: Slidable(
-        actionPane: SlidableDrawerActionPane(),
-        secondaryActions: [
-          IconSlideAction(
-            caption: 'Delete',
-            color: Colors.purple[600],
-            icon: Icons.delete,
-            onTap: () async {},
-          ),
-        ],
+        endActionPane: ActionPane(
+          motion: const DrawerMotion(),
+          extentRatio: 0.25,
+          children: [
+            SlidableAction(
+              label: 'Delete',
+              backgroundColor: Colors.red,
+              icon: Icons.delete,
+              onPressed: (context) {},
+            ),
+          ],
+        ),
         child: CheckboxListTile(
           checkColor: Colors.purple,
           activeColor: Colors.purple[100],
@@ -160,11 +164,11 @@ class TodoCard extends StatelessWidget {
           onChanged: (value) async {},
           subtitle: Text(
             '${todo.created.day}/${todo.created.month}/${todo.created.year}',
-            style: TextStyle(color: Colors.white, fontSize: 10),
+            style: const TextStyle(color: Colors.white, fontSize: 10),
           ),
           title: Text(
             todo.title,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               decoration: TextDecoration.none,
             ),
